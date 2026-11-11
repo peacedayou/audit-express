@@ -1,0 +1,28 @@
+{
+  "success": true,
+  "results": {
+    "detectors": [
+      {
+        "check": "reentrancy-eth",
+        "impact": "High",
+        "confidence": "Medium",
+        "description": "Reentrancy in Vault.withdraw() (src/Vault.sol#20-26)",
+        "elements": [{"source_mapping": {"filename_relative": "src/Vault.sol", "lines": [20, 21]}}]
+      },
+      {
+        "check": "timestamp",
+        "impact": "Low",
+        "confidence": "Medium",
+        "description": "Vesting uses timestamp for comparisons",
+        "elements": [{"source_mapping": {"filename_relative": "src/Vesting.sol", "lines": [88]}}]
+      },
+      {
+        "check": "unchecked-transfer",
+        "impact": "High",
+        "confidence": "Medium",
+        "description": "Only in a dependency",
+        "elements": [{"source_mapping": {"filename_relative": "lib/openzeppelin/Token.sol", "lines": [5]}}]
+      }
+    ]
+  }
+}
