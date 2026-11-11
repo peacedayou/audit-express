@@ -1,0 +1,36 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: pip install -e ".[dev]"
+      - run: ruff check .
+      - run: pytest -v
+
+  demo:
+    # Audit complet de web3-contract-kit : tests Foundry + Slither + détecteurs maison
+    needs: tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - uses: foundry-rs/foundry-toolchain@v1
+      - run: pip install -e ".[analyse]"
+      - run: git clone --recurse-submodules --depth 1 https://github.com/peacedayou/web3-contract-kit target
+      - run: auditx target --name web3-contract-kit --client "Démonstration" --out rapport-web3-contract-kit.md
+      - run: cat rapport-web3-contract-kit.md >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rapport-demo
+          path: rapport-web3-contract-kit.*
