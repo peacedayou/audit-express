@@ -141,7 +141,8 @@ def markdown_to_html(md: str, title: str) -> str:
         body.append("</ol>")
     style = (
         "body{font-family:system-ui,sans-serif;max-width:900px;margin:2rem auto;padding:0 1rem;color:#1d2433;line-height:1.5}"
-        "table{border-collapse:collapse;width:100%;margin:1rem 0}th,td{border:1px solid #dde1e8;padding:.4rem .6rem;text-align:left}"
+        "table{border-collapse:collapse;width:100%;margin:1rem 0}"
+        "th,td{border:1px solid #dde1e8;padding:.4rem .6rem;text-align:left}"
         "th{background:#f3f5f9}code{background:#f3f5f9;padding:0 .25rem;border-radius:3px}h3{margin-top:2rem}"
     )
     return (
