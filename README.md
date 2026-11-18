@@ -17,6 +17,15 @@ auditx ../mon-projet --client "ACME" --out rapport.md
 Un rapport de démonstration complet sur [web3-contract-kit](https://github.com/peacedayou/web3-contract-kit)
 est produit à chaque commit : onglet **Actions**, puis le résumé du job `demo` ou l'artefact `rapport-demo`.
 
+## Ça vous intéresse ?
+
+**Pour qui :** Équipes Solidity qui veulent un premier rapport d'audit lisible, en français, avant un audit complet ou un lancement.
+
+- ⭐ Ajoutez une étoile ou suivez le dépôt (**Watch**) pour être prévenu des nouvelles versions.
+- 📝 Dites-moi votre besoin : [ouvrez une fiche « Je suis intéressé »](https://github.com/peacedayou/audit-express/issues/new?template=interet.yml).
+  Cela m'aide à choisir les prochaines fonctions. Aucune vente ni aucun engagement : c'est une simple liste d'intérêt.
+- 💬 Une question ou une idée ? Ouvrez une *issue* ; je réponds en français ou en anglais.
+
 ## Contenu du rapport
 
 - Résumé par gravité (Critique, Élevée, Moyenne, Faible, Information)
